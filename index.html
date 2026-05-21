@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>HappyBiome | Coming Soon</title>
+
+  <style>
+    :root {
+      --teal: #55d1c7;
+      --purple: #7220b2;
+      --light-purple: #b98ee9;
+      --soft-bg: #f7fffd;
+      --text: #25313a;
+      --muted: #607176;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: Arial, Helvetica, sans-serif;
+      background:
+        radial-gradient(circle at 15% 20%, rgba(85, 209, 199, 0.16), transparent 28%),
+        radial-gradient(circle at 85% 25%, rgba(114, 32, 178, 0.12), transparent 28%),
+        linear-gradient(180deg, #ffffff 0%, var(--soft-bg) 100%);
+      color: var(--text);
+      overflow-x: hidden;
+    }
+
+    .page {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 48px 20px;
+      position: relative;
+    }
+
+    .card {
+      width: 100%;
+      max-width: 760px;
+      text-align: center;
+      background: rgba(255, 255, 255, 0.88);
+      border: 1px solid rgba(85, 209, 199, 0.22);
+      border-radius: 36px;
+      padding: 52px 34px 46px;
+      box-shadow: 0 24px 80px rgba(28, 45, 52, 0.08);
+      position: relative;
+      z-index: 2;
+    }
+
+    .logo {
+      width: min(420px, 88%);
+      height: auto;
+      margin-bottom: 28px;
+    }
+
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 9px 16px;
+      border-radius: 999px;
+      background: rgba(85, 209, 199, 0.16);
+      color: var(--purple);
+      font-weight: 700;
+      font-size: 14px;
+      letter-spacing: 0.02em;
+      margin-bottom: 20px;
+    }
+
+    .dot {
+      width: 9px;
+      height: 9px;
+      border-radius: 999px;
+      background: var(--teal);
+    }
+
+    h1 {
+      font-size: clamp(34px, 6vw, 62px);
+      line-height: 1.02;
+      margin: 0 0 18px;
+      color: var(--purple);
+      letter-spacing: -0.04em;
+    }
+
+    .subhead {
+      font-size: clamp(18px, 2.5vw, 23px);
+      line-height: 1.55;
+      color: var(--muted);
+      max-width: 620px;
+      margin: 0 auto 30px;
+    }
+
+    .actions {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-top: 28px;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 48px;
+      padding: 0 22px;
+      border-radius: 999px;
+      text-decoration: none;
+      font-weight: 700;
+      transition: transform 0.15s ease, box-shadow 0.15s ease;
+    }
+
+    .button:hover {
+      transform: translateY(-2px);
+    }
+
+    .primary {
+      background: var(--purple);
+      color: white;
+      box-shadow: 0 12px 26px rgba(114, 32, 178, 0.18);
+    }
+
+    .secondary {
+      background: white;
+      color: var(--purple);
+      border: 1px solid rgba(114, 32, 178, 0.18);
+    }
+
+    .note {
+      margin-top: 26px;
+      font-size: 14px;
+      color: #7a8a8f;
+    }
+
+    .bubble,
+    .plus {
+      position: absolute;
+      opacity: 0.85;
+      z-index: 1;
+    }
+
+    .bubble {
+      border-radius: 999px;
+    }
+
+    .b1 {
+      width: 18px;
+      height: 18px;
+      background: var(--teal);
+      top: 22%;
+      left: 18%;
+    }
+
+    .b2 {
+      width: 30px;
+      height: 30px;
+      background: var(--light-purple);
+      top: 28%;
+      right: 17%;
+    }
+
+    .b3 {
+      width: 14px;
+      height: 14px;
+      background: var(--teal);
+      bottom: 24%;
+      right: 24%;
+    }
+
+    .b4 {
+      width: 24px;
+      height: 24px;
+      background: var(--purple);
+      bottom: 26%;
+      left: 20%;
+    }
+
+    .plus {
+      color: var(--teal);
+      font-size: 50px;
+      font-weight: 800;
+      line-height: 1;
+    }
+
+    .p1 {
+      top: 18%;
+      right: 26%;
+    }
+
+    .p2 {
+      bottom: 25%;
+      left: 13%;
+    }
+
+    @media (max-width: 640px) {
+      .card {
+        padding: 40px 22px 34px;
+        border-radius: 28px;
+      }
+
+      .logo {
+        width: min(330px, 92%);
+      }
+
+      .actions {
+        flex-direction: column;
+      }
+
+      .button {
+        width: 100%;
+      }
+
+      .bubble,
+      .plus {
+        opacity: 0.45;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <main class="page">
+    <div class="bubble b1"></div>
+    <div class="bubble b2"></div>
+    <div class="bubble b3"></div>
+    <div class="bubble b4"></div>
+    <div class="plus p1">+</div>
+    <div class="plus p2">+</div>
+
+    <section class="card">
+      <img class="logo" src="logo.png" alt="HappyBiome logo" />
+
+      <div class="pill">
+        <span class="dot"></span>
+        Coming Soon
+      </div>
+
+      <h1>A happier gut starts here.</h1>
+
+      <p class="subhead">
+        HappyBiome is building personalized gut health insights for families,
+        starting with easy at-home stool testing and clear, actionable recommendations.
+      </p>
+
+      <div class="actions">
+        <a class="button primary" href="mailto:hello@happybiome.com">
+          Contact Us
+        </a>
+
+        <a class="button secondary" href="mailto:hello@happybiome.com?subject=HappyBiome%20Waitlist">
+          Join the Waitlist
+        </a>
+      </div>
+
+      <div class="note">
+        Website launching soon.
+      </div>
+    </section>
+  </main>
+</body>
+</html>
